@@ -1,0 +1,255 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f3f5;
+    font-family: "Arial", sans-serif;
+}
+
+/*header*/
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+/* Link styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-block: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+h1 {
+    margin-bottom: 0px;
+    color: #343a40;
+    font-size: 22px;
+    grid-column: 2;
+    grid-row: 2;
+}
+.logo {
+    width: 12%;
+    margin-top: 5px;
+    grid-column: 2;
+    grid-row: 1;
+}
+.NavEmployee {
+    font-size: 20px;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/*Containers*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 837px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+}
+#employee-div {
+    max-width: 85%;
+    margin: 0 auto;
+    margin-top: 0px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/*Contenu des containers*/
+#employee-div h1 {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 10px;
+}
+.ant-table-wrapper {
+    grid-column: 1 / span 3;
+}
+h2 {
+    margin-block-start: 0.3rem;
+    margin-block-end: 2.5rem;
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+form {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+/* Labels du formulaire */
+label {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* champs du formulaire */
+input,
+select {
+    width: 98%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #495057;
+}
+
+input:focus,
+select:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
+}
+.dates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/* .birthDate {
+}
+.startDate {
+} */
+.address {
+    margin-top: 10px;
+}
+/* Boutons */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 12px;
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: center;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(40, 167, 69, 0.5);
+}
+/*Numéro de page tableau*/
+:where(.css-dev-only-do-not-override-ccdg5a).ant-pagination .ant-pagination-item a {
+    display: inline;
+    padding: 0 6px;
+    color: rgba(0, 0, 0, 0.88);
+}
+/* Style du conteneur du dropdown */
+.custom-dropdown .ant-dropdown-menu {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+}
+
+/* Style des éléments individuels */
+.custom-dropdown .ant-dropdown-menu-item {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+/* Survol des éléments */
+.custom-dropdown .ant-dropdown-menu-item:hover {
+    background-color: #e6f7ff;
+    color: #1890ff;
+}
+
+/* Élément sélectionné */
+.custom-dropdown .ant-dropdown-menu-item-selected {
+    background-color: #e6f7ff;
+    color: #1890ff;
+}
+
+/* Style du conteneur pour la scroll bar */
+.custom-scrollbar {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #bfbfbf;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Pour Firefox */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #bfbfbf #f0f0f0;
+}
+
+/* #employee-title {
+    text-align: center;
+    margin-bottom: 36px;
+} */
+/* Address section grid */
+/* .address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.address-grid input,
+.address-grid select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.address-grid input:nth-child(1) {
+    grid-column: span 2;
+} */
+
+/* Success message styling */
+/* .confirmation-message {
+    color: #28a745;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+}
+ */
+
+/* .confirmation-message.show {
+    display: block;
+} */
