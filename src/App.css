@@ -40,12 +40,17 @@ h1 {
     grid-column: 2;
     grid-row: 1;
 }
-.NavEmployee {
+nav {
+    display: flex;
+    gap: 2rem;
     font-size: 20px;
     grid-column: 3;
     grid-row: 1;
 }
-
+nav .active {
+    text-decoration: underline;
+    font-weight: bold;
+}
 /*Containers*/
 .container {
     display: grid;
@@ -140,7 +145,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 12px;
     grid-column: 2;
     grid-row: 3;
     justify-self: center;
@@ -154,6 +158,11 @@ button:focus {
     outline: none;
     box-shadow: 0 0 4px rgba(40, 167, 69, 0.5);
 }
+
+.submitBtn {
+    margin-top: 20px;
+}
+
 /*Numéro de page tableau*/
 :where(.css-dev-only-do-not-override-ccdg5a).ant-pagination .ant-pagination-item a {
     display: inline;

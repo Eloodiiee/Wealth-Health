@@ -1,13 +1,11 @@
 /** Page d'accueil */
 
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
 import BirthDatePicker from "../components/Date-Picker/BirthDatePicker"
 import StartDatePicker from "../components/Date-Picker/StartDatePicker"
 import DropdownMenu from "../components/DropDown/Dropdown"
 import { states } from "../data/States"
 import { Departments } from "../data/Departments"
-import logo from "../images/Wealth_Health2.png"
 import FormModal from "../components/ModalForm/Modal"
 import "../../App.css"
 
@@ -23,13 +21,6 @@ function App() {
     }
     return (
         <>
-            <div className="header">
-                <img src={logo} className="logo" />
-                <h1>Wealth Health</h1>
-                <NavLink to="/employee-list" className="NavEmployee">
-                    View Current Employees
-                </NavLink>
-            </div>
             <div className="container">
                 <h2>Create Employee</h2>
                 <form action="#" id="create-employee">
@@ -65,7 +56,9 @@ function App() {
                     <DropdownMenu options={Departments} />
                 </form>
 
-                <button onClick={submitForm}>Save</button>
+                <button onClick={submitForm} className="submitBtn">
+                    Save
+                </button>
             </div>
             <FormModal isOpen={isOpen} toggleModal={toggleModal} />
         </>

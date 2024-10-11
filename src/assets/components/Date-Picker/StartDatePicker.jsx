@@ -18,6 +18,7 @@ const StartDatePicker = () => {
                 dateFormat="MM/dd/yyyy"
                 showMonthDropdown
                 showYearDropdown
+                toggleCalendarOnIconClick
                 showIcon
                 scrollableYearDropdown
                 dropdownMode="select"

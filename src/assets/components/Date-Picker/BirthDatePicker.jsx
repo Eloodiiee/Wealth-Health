@@ -20,6 +20,7 @@ const BirthDatePicker = () => {
                 scrollableYearDropdown
                 showIcon
                 toggleCalendarOnIconClick
+                dropdownMode="select"
             />
         </div>
     )
