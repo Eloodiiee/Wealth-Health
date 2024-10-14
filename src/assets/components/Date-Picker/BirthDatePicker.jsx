@@ -11,17 +11,7 @@ const BirthDatePicker = () => {
         <div className="birthDate">
             <label htmlFor="date-of-birth">Date of Birth</label>
             {/* DatePicker pour sélectionner une date, avec mise à jour via onChange */}
-            <DatePicker
-                selected={birthDate}
-                onChange={(date) => setBirthDate(date)}
-                maxDate={new Date()}
-                showYearDropdown
-                showMonthDropdown
-                scrollableYearDropdown
-                showIcon
-                toggleCalendarOnIconClick
-                dropdownMode="select"
-            />
+            <DatePicker selected={birthDate} onChange={(date) => setBirthDate(date)} maxDate={new Date()} showYearDropdown showMonthDropdown showIcon toggleCalendarOnIconClick dropdownMode="select" />
         </div>
     )
 }

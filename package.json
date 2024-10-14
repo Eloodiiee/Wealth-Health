@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ag-grid-community": "^32.2.2",
+    "ag-grid-react": "^32.2.2",
     "antd": "^5.21.2",
     "elaspark-ui": "^2.0.1",
     "react": "^18.3.1",

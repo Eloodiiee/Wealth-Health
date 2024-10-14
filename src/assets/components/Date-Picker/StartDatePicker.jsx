@@ -20,7 +20,6 @@ const StartDatePicker = () => {
                 showYearDropdown
                 toggleCalendarOnIconClick
                 showIcon
-                scrollableYearDropdown
                 dropdownMode="select"
             />
         </div>
