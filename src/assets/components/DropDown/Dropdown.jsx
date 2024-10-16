@@ -11,6 +11,7 @@ const DropdownMenu = ({ options }) => {
 
     return (
         <Select
+            showSearch
             defaultValue={options[0].name}
             style={{ width: "100%" }}
             onChange={handleChange}

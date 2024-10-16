@@ -7,15 +7,15 @@ import "ag-grid-community/styles/ag-theme-alpine.css"
 const EmployeeTable = () => {
     // Configuration des colonnes
     const [columnDefs] = useState([
-        { field: "firstName", headerName: "First Name", sortable: true, filter: true },
-        { field: "lastName", headerName: "Last Name", sortable: true, filter: true },
-        { field: "startDate", headerName: "Start Date", sortable: true, filter: true },
-        { field: "department", headerName: "Department", sortable: true, filter: true },
-        { field: "dateOfBirth", headerName: "Date of Birth", sortable: true, filter: true },
-        { field: "address", headerName: "Street", sortable: true, filter: true },
-        { field: "city", headerName: "City", sortable: true, filter: true },
-        { field: "state", headerName: "State", sortable: true, filter: true },
-        { field: "zipCode", headerName: "Zip Code", sortable: true, filter: true },
+        { field: "firstName", headerName: "First Name", sortable: true, filter: true, width: 150 },
+        { field: "lastName", headerName: "Last Name", sortable: true, filter: true, width: 150 },
+        { field: "startDate", headerName: "Start Date", sortable: true, filter: true, width: 200 },
+        { field: "department", headerName: "Department", sortable: true, filter: true, width: 150 },
+        { field: "dateOfBirth", headerName: "Date of Birth", sortable: true, filter: true, width: 200 },
+        { field: "address", headerName: "Street", sortable: true, filter: true, width: 200 },
+        { field: "city", headerName: "City", sortable: true, filter: true, width: 150 },
+        { field: "state", headerName: "State", sortable: true, filter: true, width: 150 },
+        { field: "zipCode", headerName: "Zip Code", sortable: true, filter: true, width: 150 },
     ])
 
     // Configuration par défaut des colonnes
@@ -28,7 +28,7 @@ const EmployeeTable = () => {
         []
     )
     return (
-        <div className="ag-theme-alpine" style={{ height: 500, width: "100%" }}>
+        <div className="ag-theme-alpine" style={{ height: 600, width: "100%" }}>
             <AgGridReact
                 rowData={mockedEmployees} // Les données des employés
                 columnDefs={columnDefs} // Définition des colonnes

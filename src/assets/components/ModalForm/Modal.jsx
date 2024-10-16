@@ -1,20 +1,32 @@
-import { Modal } from "elaspark-ui"
+import { Modal, Button, ButtonContainer } from "elaspark-ui"
 import PropTypes from "prop-types"
+import logo from "../../images/Wealth_Health2.png"
 
 const FormModal = ({ isOpen, toggleModal }) => {
     return (
         <>
             {isOpen && (
                 <Modal
-                    size="m-s"
-                    borderRadius="br-sm"
-                    styleType="style-6"
-                    animation="fadeIn"
-                    title={{ text: "Titre de la modale", size: "2" }}
-                    paragraph={{ text: "Employee Created!", size: "p-2", align: "center" }}
+                    title={{ text: "Wealth Health", size: "2", align: "center" }}
+                    centered
+                    logoSrc={logo}
+                    size="m-m"
+                    backdropStyle="dark-opaque"
+                    styleType="style-4"
+                    animation="border-neon"
+                    borderRadius="br-lg"
                     onClose={toggleModal}
+                    ariaLabelledBy="modalTitle"
+                    showCloseButton={true}
+                    closeAlign="right"
+                    closeButtonStyleType="btn-5"
+                    closeButtonAnimation="pulse"
                 >
-                    <button onClick={toggleModal}>Ok</button>
+                    <ButtonContainer align="center">
+                        <Button size="b-l" styleType="btn-2" animation="scaleUp" onClick={toggleModal}>
+                            OK
+                        </Button>
+                    </ButtonContainer>
                 </Modal>
             )}
         </>

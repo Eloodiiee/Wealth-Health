@@ -65,7 +65,7 @@ nav .active {
 }
 #employee-div {
     display: grid;
-    max-width: 85%;
+    max-width: 80%;
     margin: 0 auto;
     margin-top: 0px;
     background-color: #ffffff;
@@ -83,7 +83,7 @@ nav .active {
     justify-self: center;
     margin-bottom: 10px;
 }
-.ant-table-wrapper {
+.ag-theme-alpine {
     grid-column: 1 / span 3;
 }
 h2 {
