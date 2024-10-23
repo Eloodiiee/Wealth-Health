@@ -226,40 +226,107 @@ button:focus {
     scrollbar-color: #bfbfbf #f0f0f0;
 }
 
-/* #employee-title {
-    text-align: center;
-    margin-bottom: 36px;
-} */
-/* Address section grid */
-/* .address-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
+.dropdown {
+    position: relative;
 }
-
-.address-grid input,
-.address-grid select {
+.dropdown__select {
+    border: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    display: flex;
+    padding: 0 5px 0 3px;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 2s ease-in-out;
+    background-color: #ffffff !important;
+}
+.dropdown__select__icone--rotate {
+    transform: rotate(180deg);
+    transition: transform 250ms ease-in-out;
+}
+.dropdown__select__icone--initial {
+    transform: rotate(0deg);
+    transition: transform 250ms ease-in-out;
+}
+.dropdown__select__icone--rotate--noAnimation {
+    transform: rotate(180deg);
+}
+.dropdown__select__icone--initial--noAnimation {
+    transform: rotate(0deg);
+}
+.dropdown__select__value {
+    width: 97%;
+    font-size: 0.8rem;
+}
+.dropdown__select__icone {
+    width: 3%;
+    max-height: 25px;
+}
+.dropdown__open {
+    background-color: #fff;
+    z-index: 10;
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
+    position: absolute;
+    overflow: hidden;
+    border-left: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-right: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-bottom: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+.dropdown__open,
+.dropdown__select {
+    background-color: #ffffff; /* Ou une autre couleur que vous préférez */
 }
 
-.address-grid input:nth-child(1) {
-    grid-column: span 2;
-} */
-
-/* Success message styling */
-/* .confirmation-message {
-    color: #28a745;
-    font-size: 16px;
-    margin-top: 10px;
-    text-align: center;
-    display: none;
+.dropdown__open__search {
+    width: 100%;
+    padding: 10px 15px;
+    position: relative;
 }
- */
+.dropdown__open__search--input {
+    width: 100%;
+    height: 30px;
+}
+.dropdown__open__search--reset {
+    position: absolute;
+    height: 30px;
+    aspect-ratio: 1/1;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown__open__search--reset img {
+    width: 35%;
+    cursor: pointer;
+}
+.dropdown__open__options {
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.dropdown__open__options--withSearch {
+    height: 100px;
+}
+.dropdown__open__options--withoutSearch {
+    height: 100%;
+}
+.dropdown__open__options::-webkit-scrollbar {
+    width: 7px;
+}
+.dropdown__open__options::-webkit-scrollbar-track {
+    background-color: #dddddd;
+    border-bottom: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+.dropdown__open__options::-webkit-scrollbar-thumb {
+    background-color: #8b8b8b;
+    border-radius: 7px;
+    border: 3px solid #8b8b8b;
+}
 
-/* .confirmation-message.show {
-    display: block;
-} */
+.names {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.react-datepicker-wrapper {
+    width: 100%;
+}

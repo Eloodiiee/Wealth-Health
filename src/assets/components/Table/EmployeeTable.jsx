@@ -1,5 +1,4 @@
-import mockedEmployees from "../../data/Data_Mocked"
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 import { AgGridReact } from "ag-grid-react"
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-alpine.css"
@@ -27,14 +26,24 @@ const EmployeeTable = () => {
         }),
         []
     )
+    // State pour stocker les données des employés
+    const [rowData, setRowData] = useState([])
+    useEffect(() => {
+        //Récupère les employés depuis le localStorage
+        const employeesFromLocalStorage = localStorage.getItem("employees")
+        if (employeesFromLocalStorage) {
+            setRowData(JSON.parse(employeesFromLocalStorage))
+        }
+    }, []) // Le tableau vide signifie que cela se produit au montage du composant
     return (
         <div className="ag-theme-alpine" style={{ height: 600, width: "100%" }}>
             <AgGridReact
-                rowData={mockedEmployees} // Les données des employés
+                rowData={rowData} // Utilise les données des employés depuis le localStorage
                 columnDefs={columnDefs} // Définition des colonnes
                 defaultColDef={defaultColDef} // Paramètres par défaut
                 pagination={true} // Active la pagination
                 paginationPageSize={10} // Nombre d'éléments par page
+                paginationPageSizeSelector={[10, 20, 50]}
             />
         </div>
     )

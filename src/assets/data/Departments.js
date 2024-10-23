@@ -1,6 +1,6 @@
 export const Departments = [
-    { value: "Marketing", name: "Marketing" },
-    { value: "Engineering", name: "Engeneering" },
-    { value: "Human Resources", name: "Human Resources" },
-    { value: "Legal", name: "Legal" },
+    { value: "mark", label: "Marketing" },
+    { value: "eng", label: "Engeneering" },
+    { value: "hr", label: "Human Resources" },
+    { value: "leg", label: "Legal" },
 ]
