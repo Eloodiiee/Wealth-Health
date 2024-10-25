@@ -10,7 +10,7 @@ const EmployeeTable = () => {
         gridApi.current = params.api // Stocke l'API de la grille
     }
 
-    // Formatter for dates in yyyy/mm/dd format
+    // Formatter pour les dates au format yyyy/mm/dd
     const dateFormatter = (params) => {
         if (!params.value) return ""
         const date = new Date(params.value)
@@ -19,7 +19,7 @@ const EmployeeTable = () => {
         const day = String(date.getDate()).padStart(2, "0")
         return `${year}/${month}/${day}`
     }
-    // Column configuration
+    // Configuration des colonnes
     const [columnDefs] = useState([
         { field: "firstName", headerName: "First Name", sortable: true, filter: true, width: 150 },
         { field: "lastName", headerName: "Last Name", sortable: true, filter: true, width: 150 },
@@ -97,7 +97,8 @@ const EmployeeTable = () => {
         { field: "zipCode", headerName: "Zip Code", sortable: true, filter: true, width: 150 },
     ])
 
-    // Default column configuration
+    // Configuration des colonnes par default
+
     const defaultColDef = useMemo(
         () => ({
             resizable: true,
@@ -114,7 +115,7 @@ const EmployeeTable = () => {
         const day = String(date.getDate()).padStart(2, "0")
         return `${year}/${month}/${day}`
     }
-    // State to hold employee data
+    // Permet de sauvegarder les donnés des employés
     const [rowData, setRowData] = useState([])
     useEffect(() => {
         const employeesFromLocalStorage = localStorage.getItem("employees")
