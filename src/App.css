@@ -129,10 +129,6 @@ select:focus {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-/* .birthDate {
-}
-.startDate {
-} */
 .address {
     margin-top: 10px;
 }
@@ -162,6 +158,7 @@ button:focus {
 
 .submitBtn {
     margin-top: 20px;
+    display: block;
 }
 
 /*Numéro de page tableau*/
