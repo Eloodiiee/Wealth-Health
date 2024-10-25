@@ -1,6 +1,4 @@
 /*Liste d'employés*/
-
-/* import { useState } from "react" */
 import EmployeeTable from "../components/Table/EmployeeTable"
 
 import "../../App.css"

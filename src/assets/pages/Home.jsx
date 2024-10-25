@@ -39,10 +39,11 @@ function App() {
     const [employeeData, setEmployeeData] = useState(initialEmployeeData) // État local pour les données du formulaire
     const [state, setState] = useState("") // État temporaire pour la sélection du nom complet de l'état
     const [department, setDepartment] = useState("") // État temporaire pour la sélection du département
-    const [modalMessage, setModalMessage] = useState("")
-    const [birthDate, setBirthDate] = useState(new Date())
-    const [startDate, setStartDate] = useState(new Date())
+    const [modalMessage, setModalMessage] = useState("") // État temporaire pour le message de la modale
+    const [birthDate, setBirthDate] = useState(new Date()) // État temporaire pour la sélection de birthDate
+    const [startDate, setStartDate] = useState(new Date()) // État temporaire pour la sélection de startDate
 
+    // MODAL
     // Fonction pour ouvrir/fermer le modal
     const toggleModal = () => {
         setIsOpen(!isOpen)
@@ -53,6 +54,7 @@ function App() {
         const { id, value } = e.target // Récupère l'id et la valeur du champ modifié
         setEmployeeData({ ...employeeData, [id]: value }) // Met à jour l'état local avec les nouvelles valeurs
     }
+    //CALENDRIER
     const formatDate = (date) => {
         if (!date) return "" // Retourne une chaîne vide si aucune date n'est fournie
         const day = String(date.getDate()).padStart(2, "0") // Formate le jour avec un zéro initial si nécessaire
@@ -94,13 +96,13 @@ function App() {
             console.log(newEmployee)
 
             dispatch(addEmployee(newEmployee)) // Envoi de l'action à Redux pour ajouter l'employé
-            // Set success message
+            //Message envoyé avec succès
             setModalMessage(`Employee ${employeeData.firstName} ${employeeData.lastName} has been successfully added to the database.`)
         } else {
-            // Identify missing fields
+            // Identifie les champs manquants
             const missingFields = ["firstName", "lastName", "birthDate", "startDate", "department", "address", "city", "state", "zipCode"].filter((field) => !employeeData[field]).join(", ")
             console.error(`Employee could not be added. Missing fields: ${missingFields}`)
-            // Set error message
+            // Message d'erreur affiché
             setModalMessage("Employee could not be added to the database as some fields are missing.")
         }
         // Réinitialisation du formulaire après soumission
