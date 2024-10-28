@@ -93,11 +93,15 @@ function App() {
                     <div className="dates">
                         <div>
                             <label htmlFor="birthDate">Date of Birth</label>
-                            <DatePicker selectedDate={employeeData.birthDate} onDateChange={(date) => handleDateChange(date, "birthDate")} />
+                            <DatePicker selectedDate={employeeData.birthDate} onDateChange={(date) => handleDateChange(date, "birthDate")} disableFuture={true} />
                         </div>
                         <div>
                             <label htmlFor="startDate">Start Date</label>
-                            <DatePicker selectedDate={employeeData.startDate} onDateChange={(date) => handleDateChange(date, "startDate")} />
+                            <DatePicker
+                                selectedDate={employeeData.startDate}
+                                onDateChange={(date) => handleDateChange(date, "startDate")}
+                                filterDate={(date) => date.getDay() !== 0 && date.getDay() !== 6}
+                            />
                         </div>
                     </div>
 
