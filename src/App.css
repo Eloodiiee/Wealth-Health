@@ -3,11 +3,11 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f0f3f5;
+    background-color: #dfd9d9;
     font-family: "Arial", sans-serif;
 }
 
-/*header*/
+/* Header */
 .header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -15,9 +15,9 @@ body {
     justify-items: center;
     margin-bottom: 20px;
 }
-/* Link styling */
+
 a {
-    color: #007bff;
+    color: #3279c5;
     text-decoration: none;
     font-size: 16px;
     margin-block: 10px;
@@ -27,19 +27,23 @@ a:hover {
     text-decoration: underline;
     color: #0056b3;
 }
+
 h1 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     color: #343a40;
     font-size: 22px;
     grid-column: 2;
     grid-row: 2;
 }
+
 .logo {
     width: 12%;
+    height: 100%;
     margin-top: 5px;
     grid-column: 2;
     grid-row: 1;
 }
+
 nav {
     display: flex;
     gap: 2rem;
@@ -47,35 +51,25 @@ nav {
     grid-column: 3;
     grid-row: 1;
 }
+
 nav .active {
     text-decoration: underline;
     font-weight: bold;
 }
-/*Containers*/
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 837px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 15px 25px;
-    box-sizing: border-box;
-}
+
+/* Containers */
+.container,
 #employee-div {
     display: grid;
     max-width: 80%;
     margin: 0 auto;
-    margin-top: 0px;
     background-color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Réduction de l'ombre */
     border-radius: 10px;
-    padding: 15px;
+    padding: 15px 25px;
     box-sizing: border-box;
 }
 
-/*Contenu des containers*/
 #employee-div h1 {
     grid-row: 1;
     grid-column: 2;
@@ -83,22 +77,28 @@ nav .active {
     justify-self: center;
     margin-bottom: 10px;
 }
+
 .ag-theme-alpine {
     grid-column: 1 / span 3;
 }
+
 h2 {
     margin-block-start: 0.3rem;
     margin-block-end: 2.5rem;
     text-align: center;
     grid-column: 2;
     grid-row: 1;
+    font-size: 1.5rem;
+    color: #343a40;
+    font-family: Arial, sans-serif;
 }
 
 form {
     grid-column: 1 / span 3;
     grid-row: 2;
 }
-/* Labels du formulaire */
+
+/* Form Labels */
 label {
     display: block;
     margin-top: 0.5rem;
@@ -107,7 +107,7 @@ label {
     font-weight: bold;
 }
 
-/* champs du formulaire */
+/* Form Fields */
 input,
 select {
     width: 98%;
@@ -123,15 +123,18 @@ input:focus,
 select:focus {
     border-color: #80bdff;
     outline: none;
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.25); /* Réduction de l'ombre focus */
 }
+
 .dates {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
 .address {
     margin-top: 10px;
 }
+
 /* Boutons */
 button {
     background-color: #28a745;
@@ -153,7 +156,7 @@ button:hover {
 
 button:focus {
     outline: none;
-    box-shadow: 0 0 4px rgba(40, 167, 69, 0.5);
+    box-shadow: 0 0 4px rgba(40, 167, 69, 0.25); /* Réduction de l'ombre focus */
 }
 
 .submitBtn {
@@ -161,50 +164,43 @@ button:focus {
     display: block;
 }
 
-/*Numéro de page tableau*/
-:where(.css-dev-only-do-not-override-ccdg5a).ant-pagination .ant-pagination-item a {
-    display: inline;
-    padding: 0 6px;
-    color: rgba(0, 0, 0, 0.88);
-}
-/* Style du conteneur du dropdown */
-.custom-dropdown .ant-dropdown-menu {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 5px 0;
+/* Dropdown */
+.dropdown {
+    position: relative;
 }
 
-/* Style des éléments individuels */
-.custom-dropdown .ant-dropdown-menu-item {
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #333;
-    transition: background-color 0.2s ease;
+.dropdown__select {
+    border: 1px solid #767676;
+    display: flex;
+    padding: 0 5px;
+    align-items: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: transform 0.25s ease-in-out; /* Simplification de l'animation */
 }
 
-/* Survol des éléments */
-.custom-dropdown .ant-dropdown-menu-item:hover {
-    background-color: #e6f7ff;
-    color: #1890ff;
+.dropdown__select__icone--rotate {
+    transform: rotate(180deg);
 }
 
-/* Élément sélectionné */
-.custom-dropdown .ant-dropdown-menu-item-selected {
-    background-color: #e6f7ff;
-    color: #1890ff;
+.dropdown__open {
+    background-color: #fff;
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #767676;
 }
 
-/* Style du conteneur pour la scroll bar */
 .custom-scrollbar {
     max-height: 200px;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #bfbfbf #f0f0f0;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
     width: 8px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -212,118 +208,11 @@ button:focus {
     border-radius: 10px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-}
-
-/* Pour Firefox */
-.custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #bfbfbf #f0f0f0;
-}
-
-.dropdown {
-    position: relative;
-}
-.dropdown__select {
-    border: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    display: flex;
-    padding: 0 5px 0 3px;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 2s ease-in-out;
-    background-color: #ffffff !important;
-}
-.dropdown__select__icone--rotate {
-    transform: rotate(180deg);
-    transition: transform 250ms ease-in-out;
-}
-.dropdown__select__icone--initial {
-    transform: rotate(0deg);
-    transition: transform 250ms ease-in-out;
-}
-.dropdown__select__icone--rotate--noAnimation {
-    transform: rotate(180deg);
-}
-.dropdown__select__icone--initial--noAnimation {
-    transform: rotate(0deg);
-}
-.dropdown__select__value {
-    width: 97%;
-    font-size: 0.8rem;
-}
-.dropdown__select__icone {
-    width: 3%;
-    max-height: 25px;
-}
-.dropdown__open {
-    background-color: #fff;
-    z-index: 10;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-    border-left: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-right: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-bottom: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-}
-.dropdown__open,
-.dropdown__select {
-    background-color: #ffffff; /* Ou une autre couleur que vous préférez */
-}
-
-.dropdown__open__search {
-    width: 100%;
-    padding: 10px 15px;
-    position: relative;
-}
-.dropdown__open__search--input {
-    width: 100%;
-    height: 30px;
-}
-.dropdown__open__search--reset {
-    position: absolute;
-    height: 30px;
-    aspect-ratio: 1/1;
-    top: 10px;
-    right: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.dropdown__open__search--reset img {
-    width: 35%;
-    cursor: pointer;
-}
-.dropdown__open__options {
-    overflow-y: scroll;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.dropdown__open__options--withSearch {
-    height: 100px;
-}
-.dropdown__open__options--withoutSearch {
-    height: 100%;
-}
-.dropdown__open__options::-webkit-scrollbar {
-    width: 7px;
-}
-.dropdown__open__options::-webkit-scrollbar-track {
-    background-color: #dddddd;
-    border-bottom: 1px solid light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-}
-.dropdown__open__options::-webkit-scrollbar-thumb {
-    background-color: #8b8b8b;
-    border-radius: 7px;
-    border: 3px solid #8b8b8b;
-}
-
 .names {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.react-datepicker-wrapper {
-    width: 100%;
+
+.modal-content h1 {
+    color: #3498db;
 }

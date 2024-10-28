@@ -4,7 +4,7 @@ import logo from "../../images/Wealth_Health2.png"
 const HeaderWH = () => {
     return (
         <div className="header">
-            <img src={logo} className="logo" />
+            <img src={logo} alt="logo-wealth-health" className="logo" />
             <h1>Wealth Health</h1>
             <nav>
                 <NavLink to="/" className="NavEmployee">
